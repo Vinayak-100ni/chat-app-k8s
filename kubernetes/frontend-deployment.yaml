@@ -1,24 +1,24 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
- name: backend-deployment
+ name: frontend-deployment
  namespace: app
 spec:
  replicas: 1
  selector:
   matchLabels:
-   app: backend-app
+   app: frontend-app
  template:
   metadata:
-   name: backend-pod
+   name: frontend-pod
    labels:
-    app: backend-app
+    app: frontend-app
   spec:
    containers:
-   - name: backend-container
-     image: vinayak100ni/chat-app-k8s-backend:latest
+   - name: frontend-container
+     image: vinayak100ni/chat-app-k8s-frontend:latest
      ports:
-     - containerPort: 5001
+     - containerPort: 80
      env:
      - name: NODE_ENV
        value: production
