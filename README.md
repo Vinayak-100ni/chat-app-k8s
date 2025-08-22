@@ -6,7 +6,7 @@
 
 3. port forwarding
    --> kubectl get svc -n app
-       kubectl port-forward service/backend -n app 5001:5001 & (& for running in background).
+       sudo -E kubectl port-forward service/backend -n app 5001:5001 & (& for running in background).
      --- same for frontend (80)
 
-4 now connect backend with database
+4 now connect backend with database.
